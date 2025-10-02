@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ind.css">
+    <title>Mystery Mansion - Multiplayer Murder Mystery</title>
+    
+</head>
+<body>
+    <div id="gameContainer">
+        <!-- Start Screen -->
+        <div id="startScreen">
+            <h1>MYSTERY MANSION</h1>
+            <p style="margin-bottom: 30px; font-size: 1.2rem;">A Multiplayer Murder Mystery Game</p>
+            
+            <div id="playerSetup">
+                <input type="text" id="playerName" placeholder="Enter your name" maxlength="15">
+                <button class="gameButton" onclick="startLocalGame()">Start Local Game</button>
+                <button class="gameButton" onclick="startMultiplayerGame()">Join Multiplayer</button>
+            </div>
+            
+            <button class="gameButton" onclick="showPlayerSetup()">Play Game</button>
+            <button class="gameButton" onclick="showInstructions()">How to Play</button>
+        </div>
+
+        <!-- Loading Screen -->
+        <div id="loadingScreen">
+            <div class="loadingSpinner"></div>
+            <p style="margin-top: 20px;">Loading Game...</p>
+        </div>
+
+        <!-- Game HUD -->
+        <div id="gameHUD">
+            <div class="hudSection">
+                <div id="timer">Time: 5:00</div>
+                <div id="roleInfo">Role: Loading...</div>
+            </div>
+            
+            <div class="hudSection">
+                <div id="playerList"></div>
+            </div>
+        </div>
+
+        <!-- Game Map -->
+        <div id="gameMap"></div>
+
+        <!-- Inventory -->
+        <div id="inventory"></div>
+
+        <!-- Controls -->
+        <div id="controls">
+            <button class="controlButton" onclick="interact()">Interact (E)</button>
+            <button class="controlButton" onclick="useItem()">Use Item (Q)</button>
+            <button class="controlButton" onclick="toggleMap()">Map (M)</button>
+        </div>
+
+        <!-- Audio Controls -->
+        <div id="audioControls">
+            <button class="audioButton" onclick="toggleMusic()">🔊</button>
+        </div>
+
+        <!-- Voting Screen -->
+        <div id="votingScreen">
+            <h2>Vote for the Murderer</h2>
+            <div class="votingOptions" id="votingOptions"></div>
+            <button class="gameButton" onclick="submitVote()" style="margin-top: 20px;">Submit Vote</button>
+        </div>
+
+        <!-- Game Messages -->
+        <div id="gameMessages"></div>
+
+        <!-- End Screen -->
+        <div id="endScreen">
+            <h2 id="endMessage">Game Over</h2>
+            <p id="endDetails" style="margin-bottom: 30px; font-size: 1.2rem;"></p>
+            <button class="gameButton" onclick="restartGame()">Play Again</button>
+            <button class="gameButton" onclick="backToMenu()">Main Menu</button>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="backgroundMusic" loop>
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBjGH0fPTgjMGHm7A7+OZURE" type="audio/wav">
+    </audio>
+
+    
+    <script src="ind.js"></script>
+</body>
+</html>
